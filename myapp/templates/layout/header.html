@@ -1,0 +1,64 @@
+{% load static %}
+<header>
+    <div class="logo">
+        <img src="{% static 'images/logo.png' %}" width="150" alt="Logo">
+        <a href="#">{{page_title|title}}</a>
+    </div>
+
+    <nav>
+        <ul>
+            <!--
+                Built-in tag { if request.path == 'any' ...} allow enable active CSS style
+                URL's 'Home/Blog/Videos' in <a.href> are set with name argument used in urlpatterns list in urls.py
+            -->
+            <li class="{% if request.path == '/' %}active{% endif %}"><a href="{% url 'Home' %}">Home</a></li>
+            <li class="{% if request.path == '/blog/' %}active{% endif %}"><a href="{% url 'Blog' %}">Blog</a></li>
+            <li class="{% if request.path == '/videos/' %}active{% endif %}"><a href="{% url 'Videos' %}">Videos</a></li>
+            <li><a href="">Submenus</a>
+                <ul>
+                    <li><a href="">Indices</a>
+                        <ul>
+                            <li><a href="">Africa</a></li>
+                            <li><a href="">Americas</a></li>
+                            <li><a href="">Asia</a></li>
+                            <li><a href="">Europe</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">ETFs</a>
+                        <ul>
+                            <li><a href="">Major ETFs</a></li>
+                            <li><a href="">USA ETFs</a></li>
+                            <li><a href="">World ETFs</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">Stocks</a>
+                        <ul>
+                            <li><a href="">Stock screener</a></li>
+                            <li><a href="">Top Gainers</a></li>
+                            <li><a href="">Top Losers</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">Commodities</a>
+                        <ul>
+                            <li><a href="">Energy</a></li>
+                            <li><a href="">Metals</a></li>
+                            <li><a href="">Others</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">Currencies</a>
+                        <ul>
+                            <li><a href="">Forex</a></li>
+                            <li><a href="">Crypto</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="">More</a>
+                <ul>
+                    <li class="{% if request.path == '/contact/' %}active{% endif %}"><a href="{% url 'Contact' %}">Contact</a></li>
+                    <li><a href="https://www.linkedin.com/in/nestor-dr/">About us</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</header>

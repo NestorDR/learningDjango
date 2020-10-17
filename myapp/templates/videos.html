@@ -1,0 +1,23 @@
+<!-- Inherits from base template-->
+{% extends 'base.html' %}
+
+{% block title %}Django - Template extending{% endblock %}
+
+{% block content %}
+<section class="main video">
+    {% for item in video_links %}
+        <div class="video-youtube">
+            <iframe
+                src={{item}}
+                frameborder="0"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+        </div>
+        {% if item != video_links|last %}
+            <hr>
+        {% endif %}
+    {% endfor %}
+</section>
+{% endblock %}

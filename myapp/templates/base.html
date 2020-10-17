@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <meta name="generator" content="Django Project 01">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Django Project 01">
+
+    <!--
+        Normalize.css makes browsers render all elements more consistently and in line with modern standards.
+        It precisely targets only the styles that need normalizing.
+        Visit: https://necolas.github.io/normalize.css/
+    -->
+    <link rel="stylesheet" href="{% static 'css/normalize.css' %}" type="text/css">
+    <!--
+        Custom CSS
+        Visit: http://www.falconmasters.com/web-design/sitio-web-layout-flexbox/
+    -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+     <!--
+        Google Fonts
+     -->
+     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
+</head>
+<body class="container">
+    {% include "layout\header.html" %}
+
+    {% block content %}{% endblock %}
+
+    {% include "layout\aside.html" %}
+
+    {% include "layout\footer.html" %}
+</body>
+</html>
+
