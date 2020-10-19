@@ -1,6 +1,7 @@
+# django.urls: is a library that offers functions for use in URLconfs
 from django.urls import path
 
-from myapp import views
+from . import views
 
 # urlpatterns: List to be included in main configuration URLconf (in urls.py of the project)
 # Visit: https://docs.djangoproject.com/en/3.1/ref/urls/#include
