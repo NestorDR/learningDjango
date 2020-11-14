@@ -10,9 +10,9 @@ html {
     --dark-accent-color:            #E65100;                                /* orange-900 */
     --accent-color:                 #FF9800;                                /* orange-500 */
 
-    --primary-text-color:           #212121;                                /* gray-900*/
-    --secondary-text-color:         #757575;                                /* gray-600*/
-    --disabled-text-color:          #BDBDBD;                                /* gray-400*/
+    --primary-text-color:           #212121;                                /* gray-900 */
+    --secondary-text-color:         #757575;                                /* gray-600 */
+    --disabled-text-color:          #BDBDBD;                                /* gray-400 */
     --divider-color:                var(--disabled-text-color);
 
     --app-hover-color:              #E0E0E0;                                /* gray-300 */
@@ -71,6 +71,10 @@ header {
     min-height: var(--header-height);
     width: 100%;
     padding: 20px;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+    z-index: 10;
 
     /* Flexbox */
     display: flex;
@@ -141,7 +145,7 @@ header nav li ul {
     /* Submenús */
     align-items: normal;
     display: none;          /* Hide submenús */
-    position: absolute;
+    position: absolute;     /* For the element maintains position respect to its parent element */
     min-width: var(--submenu-min-width);
     text-align: left;
     z-index:1000;           /* Overlapping elements with a larger z-index cover those with a smaller one */
